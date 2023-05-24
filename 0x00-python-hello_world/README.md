@@ -1,3 +1,10 @@
+# 0x00-python-hello_world
+![alt_text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/231/48a9fdbd67c84a328a9df9ec8d93b9ac2458ac37721d7d53e51a27fb2bdc5263.jpg)
+
+* The pycodestyle
+* Shell Scripts
+* C Scripts
+
 #Requirements
 #Python Scripts
 Allowed editors: vi, vim, emacs
@@ -27,3 +34,82 @@ In the following examples, the main.c files are shown as examples. You can use t
 The prototypes of all your functions should be included in your header file called lists.h
 Don’t forget to push your header file
 All your header files should be include guarded
+
+#RESOURSE
+[Python 3's f-Strings: An Improved String Formatting Syntax (Guide)](https://realpython.com/python-f-strings/)
+
+[How to Use the wc Command in Linux](https://www.howtogeek.com/812441/wc-command-in-linux/)
+
+[Wc Command in Linux (Count Number of Lines, Words, and Characters)](https://linuxize.com/post/linux-wc-command/)
+
+[wc(1) — Linux manual page](https://www.man7.org/linux/man-pages/man1/wc.1.html)
+
+[Disassembler for Python bytecode](https://docs.python.org/3.4/library/dis.html)
+```bash
+#TAsk one	
+
+#Write a Shell script that runs a Python script.
+
+#The Python file name will be saved in the environment variable $PYFILE
+
+guillaume@ubuntu:~/py/0x00$ cat main.py 
+#!/usr/bin/python3
+print("Best School")
+
+guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
+guillaume@ubuntu:~/py/0x00$ ./0-run
+Best School
+guillaume@ubuntu:~/py/0x00$ 
+
+#task 2
+#Write a Shell script that runs Python code.
+
+#The Python code will be saved in the environment variable $PYCODE
+
+guillaume@ubuntu:~/py/0x00$ export PYCODE='print(f"Best School: {88+10}")'
+
+#task 6
+guillaume@ubuntu:~/py/0x00$ ./6-concat.py
+Welcome to Holberton School!
+
+#It’ll tell you the length of the longest line in a file
+guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
+5 6-concat.py
+guillaume@ubuntu:~/py/0x00$ 
+
+#how to check lenght of chracter
+guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
+
+#let of character
+guillaume@ubuntu:~/py/0x00$ wc -m 9-easter_egg.py
+
+
+#Write a script that compiles a Python script file.
+
+#The Python file name will be stored in the environment variable $PYFILE
+
+#The output filename has to be $PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
+
+guillaume@ubuntu:~/py/0x00$ cat main.py 
+#!/usr/bin/python3
+print("Best School")
+
+guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
+guillaume@ubuntu:~/py/0x00$ ./101-compile
+Compiling main.py ...
+guillaume@ubuntu:~/py/0x00$ ls
+101-compile  main.py  main.pyc
+guillaume@ubuntu:~/py/0x00$ cat main.pyc | zgrep -c "Best School"
+1
+guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFERENT
+0000000 ee 0c 0d 0a 91 26 3e 58 31 00 00 00 e3 00 00 00
+0000020 00 00 00 00 00 00 00 00 00 02 00 00 00 40 00 00
+0000040 00 73 0e 00 00 00 65 00 00 64 00 00 83 01 00 01
+0000060 64 01 00 53 29 02 7a 10 48 6f 6c 62 65 72 74 6f
+0000100 6e 20 53 63 68 6f 6f 6c 4e 29 01 da 05 70 72 69
+0000120 6e 74 a9 00 72 02 00 00 00 72 02 00 00 00 fa 07
+0000140 6d 61 69 6e 2e 70 79 da 08 3c 6d 6f 64 75 6c 65
+0000160 3e 02 00 00 00 73 00 00 00 00
+0000172
+guillaume@ubuntu:~/py/0x00$ 
+```
